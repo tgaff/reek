@@ -31,7 +31,7 @@ and reports any code smells it finds.
   s.add_runtime_dependency(%q<ruby2ruby>, [">= 2.0.0"])
   s.add_runtime_dependency(%q<sexp_processor>, [">= 3.0"])
 
-  s.add_development_dependency(%q<bundler>, ["~> 1.1"])
+  s.add_development_dependency(%q<bundler>, ["> 1.1"])
   s.add_development_dependency(%q<rake>)
   s.add_development_dependency(%q<cucumber>)
   s.add_development_dependency(%q<rspec>, ["= 1.3.2"])
