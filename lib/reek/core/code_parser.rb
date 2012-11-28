@@ -20,7 +20,12 @@ module Reek
       def process(exp)
         meth = "process_#{exp[0]}"
         meth = :process_default unless self.respond_to?(meth)
-        self.send(meth, exp)
+        begin
+          self.send(meth, exp)
+        rescue TypeError => e
+          # TODO: track-down real cause of this TypeError in psych.
+          $stderr.puts "BUG: parsing failed: #{e.to_s}"
+        end
         @element
       end
 
